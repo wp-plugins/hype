@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: hype!
+Plugin Name: hype it!
 Website link: http://blog.splash.de/
 Author URI: http://blog.splash.de/
 Plugin URI: http://blog.splash.de/plugins/hype_it/
 Description: This Plugin adds the hype!-Button to posts, which uses defined tags, on your Site. Just add the following to your theme/templates: <?php echo hype_it(get_permalink(),get_the_tags()); ?>.
 Author: Oliver Schaal
-Version: 0.1.0
+Version: 0.1.1
 
     This is a WordPress plugin (http://wordpress.org) and widget
     (http://automattic.com/code/widgets/).
