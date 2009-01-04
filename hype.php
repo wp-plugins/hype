@@ -4,12 +4,11 @@ Plugin Name: hype it!
 Website link: http://blog.splash.de/
 Author URI: http://blog.splash.de/
 Plugin URI: http://blog.splash.de/plugins/hype_it/
-Description: This Plugin adds the hype!-Button to posts, which uses defined tags, on your Site. Just add the following to your theme/templates: <?php echo hype_it(get_permalink(),get_the_tags()); ?>.
 Author: Oliver Schaal
-Version: 0.2.0
-
-    This is a WordPress plugin (http://wordpress.org) and widget
-    (http://automattic.com/code/widgets/).
+Version: 0.2.1
+Description: This Plugin adds the hype!-Button to posts, which uses defined tags,
+             on your Site. Just add the following to your theme/templates:
+             `<?php echo hype_it(get_permalink(),get_the_tags()); ?>`.
 */
 
 if (!class_exists("HypeIt")) {
@@ -21,13 +20,13 @@ if (!class_exists("HypeIt")) {
             register_deactivation_hook(__FILE__, array(&$this, 'deactivatePlugin'));
         }
         // delete all options on deactivation
-        private function deactivatePlugin()
+        function deactivatePlugin()
         {
             delete_option('hype_tags');
             delete_option('hype_style');
         }
         // special urlencoding used by hype it
-        private function hype_urlencode($str)
+        function hype_urlencode($str)
         {
             return str_replace('%', '%25', urlencode(htmlentities($str)));
         }
@@ -51,7 +50,22 @@ if (!class_exists("HypeIt")) {
         }
         function showAdminMenuLink()
         {
-            add_options_page('hypeIt', 'hype it!', 9, basename(__FILE__), array(&$this, 'showAdminOptions'));
+            $hook = add_options_page('hypeIt',
+                (version_compare($GLOBALS['wp_version'], '2.6.999', '>') ? '<img src="' . @plugins_url('hype/icon.png') . '" width="10" height="10" alt="hype it! - Icon" />' : '') . 'hype it!',
+                9,
+                basename(__FILE__),
+                array(&$this,
+                    'showAdminOptions'
+                )
+            );
+            if (function_exists('add_contextual_help') === true) {
+                add_contextual_help($hook,
+                    sprintf('<a href="http://trac.splash.de/hypeit">%s</a><a href="http://blog.splash.de/plugin/hype_it/">%s</a>',
+                        __('Ticketsystem/Wiki', 'hype_it'),
+                        __('Plugin-Homepage', 'hype_it')
+                    )
+                );
+            }
         }
         // Prints out the admin page
         function showAdminOptions()
@@ -82,48 +96,50 @@ if (!class_exists("HypeIt")) {
                 ?>
 <div class="updated"><p><strong><?php _e('Options saved.', 'hype_it');
 
-                ?></strong></p></div>
+                            ?></strong></p></div>
+                            <?php
+
+                        }
+                        // Now display the options editing screen
+?>
+                        <div class="wrap">
 <?php
+                        // header
+                        echo "<h2>" . __('hype it!', 'hype_it') . "</h2>";
+                        // options form
 
-            }
-            // Now display the options editing screen
-            echo '<div class="wrap">';
-            // header
-            echo "<h2>" . __('hype it!', 'hype_it') . "</h2>";
-            // options form
-
-            ?>
+                        ?>
 
 <form name="form1" method="post" action="<?php echo str_replace('%7E', '~', $_SERVER['REQUEST_URI']);
 
-            ?>">
-<input type="hidden" name="<?php echo $hidden_field_name;
+                  ?>">
+    <input type="hidden" name="<?php echo $hidden_field_name;
 
-            ?>" value="Y">
+                       ?>" value="Y">
 
-<p><?php _e("Tags (comma separated list,lowercase):", 'hype_it');
+    <p><?php _e("Tags (comma separated list,lowercase):", 'hype_it');
 
-            ?>
-<input type="text" name="hype_tags" value="<?php echo $opt_tags;
+                    ?>
+        <input type="text" name="hype_tags" value="<?php echo $opt_tags;
 
-            ?>" size="20">
-</p>
-<p><?php _e("CSS-Style:", 'hype_it');
+                           ?>" size="20">
+    </p>
+    <p><?php _e("CSS-Style:", 'hype_it');
 
-            ?>
-<input type="text" name="hype_style" value="<?php echo $opt_style;
+                    ?>
+        <input type="text" name="hype_style" value="<?php echo $opt_style;
 
-            ?>" size="20">
-</p>
+                           ?>" size="20">
+    </p>
 
-<p class="submit">
-<input type="submit" name="Submit" value="<?php _e('Update Options', 'hype_it') ?>" />
-</p>
+    <p class="submit">
+        <input type="submit" name="Submit" value="<?php _e('Update Options', 'hype_it') ?>" />
+    </p>
 
 </form>
 </div>
 
-					<?php
+            <?php
         } //End function printAdminPage()
     }
 } //End Class HypeIt
