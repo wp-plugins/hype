@@ -1,12 +1,12 @@
 === hype it! ===
-Contributors: Oliver Schaal
+Contributors: cybio
 Website link: http://blog.splash.de/
 Author URI: http://blog.splash.de/
 Plugin URI: http://blog.splash.de/plugins/hype_it/
 Tags: social bookmark, hype, yeebase, button
 License: GPL v3, see LICENSE
 Requires at least: 2.5
-Tested up to: 2.7.0
+Tested up to: 2.8.4
 Stable tag: 0.2.1
 
 This Plugin adds the hype!-Button to posts, which uses defined tags, on your Site. Just add the following to your theme/templates: `<?php echo hype_it(get_permalink(),get_the_tags()); ?>`.
