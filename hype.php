@@ -5,7 +5,7 @@ Website link: http://blog.splash.de/
 Author URI: http://blog.splash.de/
 Plugin URI: http://blog.splash.de/plugins/hype_it/
 Author: Oliver Schaal
-Version: 0.2.2
+Version: 0.2.3
 Description: This Plugin adds the hype!-Button to posts, which uses defined tags,
              on your Site. Just add the following to your theme/templates:
              `<?php echo hype_it(get_permalink(),get_the_tags()); ?>`.
@@ -47,7 +47,7 @@ if (!class_exists("HypeIt")) {
             if (is_array($tags)) {
                 foreach($tags as $tag) {
                     if (in_array(strtolower($tag->name), $defined_tags)) {
-                        $ret_val = "<div style=\"" . get_option('hype_style') . "\"><script type=\"text/javascript\" src=\"http://hype.yeebase.com/ebutton/$url\"></script></div>";
+                        $ret_val = "<div style=\"" . get_option('hype_style') . "\"><script type=\"text/javascript\" src=\"http://t3n.de/socialnews/ebutton/$url\"></script></div>";
                         break;
                     }
                 }

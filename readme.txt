@@ -4,17 +4,17 @@ Website link: http://blog.splash.de/
 Author URI: http://blog.splash.de/
 Plugin URI: http://blog.splash.de/plugins/hype_it/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=C2RBCTVPU9QKJ&lc=DE&item_name=splash%2ede&item_number=WordPress%20Plugin%3a%20hype%20it%21&cn=Mitteilung%20an%20den%20Entwickler&no_shipping=1&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
-Tags: social bookmark, hype, yeebase, button
+Tags: social bookmark, hype, yeebase, button, t3n, social, news, bookmark
 License: GPL v3, see LICENSE
 Requires at least: 2.5
 Tested up to: 2.8.4
-Stable tag: 0.2.2
+Stable tag: 0.2.3
 
 This Plugin adds the hype!-Button to posts, which uses defined tags, on your Site. Just add the following to your theme/templates: `<?php echo hype_it(get_permalink(),get_the_tags()); ?>`.
 
 == Description ==
 
-Simple Plugin to include the hype!-Button on posts, which use a defined tag.
+Simple Plugin to include the "t3n Social News"-Button (hype!-Button) on posts, which use a defined tag.
 
 For more information on how to use this plugin see [splash ;)](http://blog.splash.de/plugins/).
 
@@ -33,6 +33,9 @@ or (maybe the better way)
 <?php endif; ?>`
 
 == Changelog ==
+
+= 0.2.3 =
+* [FIX] update to t3n.de/socialnews (new button/url)
 
 = 0.2.2 =
 * [FIX] security (don't allow script execution outside wordpress)
