@@ -34,6 +34,9 @@ or (maybe the better way)
 
 == Changelog ==
 
+= 0.2.4 =
+* [FIX] security 
+
 = 0.2.3 =
 * [FIX] update to t3n.de/socialnews (new button/url)
 
