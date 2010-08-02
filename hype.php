@@ -159,4 +159,4 @@ if (is_object($hypeIt)) {
         global $hypeIt;
         return $hypeIt->getButton($permlink, $tags);
     }
-}
+}==== ORIGINAL VERSION trunk/hype.php 128071287065049

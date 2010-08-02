@@ -41,4 +41,4 @@ or (maybe the better way)
 * [FIX] update to t3n.de/socialnews (new button/url)
 
 = 0.2.2 =
-* [FIX] security (don't allow script execution outside wordpress)
+* [FIX] security (don't allow script execution outside wordpress)==== ORIGINAL VERSION trunk/readme.txt 128071287894071
