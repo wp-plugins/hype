@@ -38,4 +38,4 @@ or (maybe the better way)
 * [FIX] update to t3n.de/socialnews (new button/url)
 
 = 0.2.2 =
-* [FIX] security (don't allow script execution outside wordpress)
+* [FIX] security (don't allow script execution outside wordpress)==== ORIGINAL VERSION tags/0.2.3/readme.txt 12807130771416

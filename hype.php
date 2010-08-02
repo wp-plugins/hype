@@ -161,4 +161,4 @@ if (is_object($hypeIt)) {
         global $hypeIt;
         return $hypeIt->getButton($permlink, $tags);
     }
-}
+}==== ORIGINAL VERSION tags/0.2.3/hype.php 128071307363514
