@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: hype it!
+Plugin Name: t3n SocialNews
 Website link: http://blog.splash.de/
 Author URI: http://blog.splash.de/
 Plugin URI: http://blog.splash.de/plugins/hype_it/
 Author: Oliver Schaal
-Version: 0.2.4
-Description: This Plugin adds the hype!-Button to posts, which uses defined tags,
+Version: 0.2.5
+Description: This Plugin adds the t3n-SocialNews-Button to posts, which uses defined tags,
              on your Site. Just add the following to your theme/templates:
              `<?php echo hype_it(get_permalink(),get_the_tags()); ?>`.
 */
@@ -58,7 +58,7 @@ if (!class_exists("HypeIt")) {
         function showAdminMenuLink()
         {
             $hook = add_options_page('hypeIt',
-                (version_compare($GLOBALS['wp_version'], '2.6.999', '>') ? '<img src="' . @plugins_url('hype/icon.png') . '" width="10" height="10" alt="hype it! - Icon" />' : '') . 'hype it!',
+                (version_compare($GLOBALS['wp_version'], '2.6.999', '>') ? '<img src="' . @plugins_url('hype/icon.png') . '" width="10" height="10" alt="t3n SocialNews - Icon" /> ' : '') . 't3n SocialNews',
                 9,
                 plugin_basename(__FILE__),
                 array(&$this,
@@ -112,7 +112,7 @@ if (!class_exists("HypeIt")) {
                         <div class="wrap">
 <?php
                         // header
-                        echo "<h2>" . __('hype it!', 'hype_it') . "</h2>";
+                        echo "<h2>" . __('t3n SocialNews', 'hype_it') . "</h2>";
                         // options form
 
                         ?>

@@ -7,10 +7,10 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=C2RBC
 Tags: social bookmark, hype, yeebase, button, t3n, social, news, bookmark
 License: GPL v3, see LICENSE
 Requires at least: 2.5
-Tested up to: 2.8.4
-Stable tag: 0.2.3
+Tested up to: 3.0.1
+Stable tag: 0.2.5
 
-This Plugin adds the hype!-Button to posts, which uses defined tags, on your Site. Just add the following to your theme/templates: `<?php echo hype_it(get_permalink(),get_the_tags()); ?>`.
+This Plugin adds the t3n Social News-Button to posts, which uses defined tags, on your Site. Just add the following to your theme/templates: `<?php echo hype_it(get_permalink(),get_the_tags()); ?>`.
 
 == Description ==
 
@@ -33,6 +33,9 @@ or (maybe the better way)
 <?php endif; ?>`
 
 == Changelog ==
+
+= 0.2.5 =
+* [FIX] rename: "hype it!" -> "t3n SocialNews"
 
 = 0.2.4 =
 * [FIX] security 
